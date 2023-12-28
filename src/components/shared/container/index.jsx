@@ -4,6 +4,7 @@ import { Page1 } from '../../../pages/page1';
 import { Page2 } from '../../../pages/page2';
 import { Home } from '../../../pages/home';
 import Customers from '../../../pages/customers';
+import CustomersContext from '../../../contexts/customers-context';
 
 const Container = () => {
   const { contentName } = useContext(ContainerContext);
@@ -18,7 +19,11 @@ const Container = () => {
           case 'home':
             return <Home />;
           case 'customers':
-            return <Customers />;
+            return (
+              <CustomersContext>
+                <Customers />
+              </CustomersContext>
+            );
           default:
             return <Home />;
         }
