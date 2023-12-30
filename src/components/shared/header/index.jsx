@@ -1,5 +1,10 @@
 import { useContext } from 'react';
 import { ContainerContext } from '../../../contexts/container-context';
+import { Home } from '../../../pages/home';
+import { Page1 } from '../../../pages/page1';
+import { Page2 } from '../../../pages/page2';
+import Customers from '../../../pages/customers';
+import CustomersContext from '../../../contexts/customers-context';
 
 const Header = () => {
   const { changeContent } = useContext(ContainerContext);
@@ -21,7 +26,7 @@ const Header = () => {
               <span className="icon-bar"></span>
             </button>
 
-            <a className="navbar-brand" href="#" onClick={() => changeContent('home')}>
+            <a className="navbar-brand" href="#" onClick={() => changeContent(<Home />)}>
               Customers APP
             </a>
           </div>
@@ -29,7 +34,7 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul className="nav navbar-nav">
               <li>
-                <a className="font-navbar" href="#" onClick={() => changeContent('home')}>
+                <a className="font-navbar" href="#" onClick={() => changeContent(<Home />)}>
                   Início
                 </a>
               </li>
@@ -48,17 +53,26 @@ const Header = () => {
 
                 <ul className="dropdown-menu">
                   <li>
-                    <a href="#" onClick={() => changeContent('page1')}>
+                    <a href="#" onClick={() => changeContent(<Page1 />)}>
                       Página 1
                     </a>
                   </li>
                   <li>
-                    <a href="#" onClick={() => changeContent('page2')}>
+                    <a href="#" onClick={() => changeContent(<Page2 />)}>
                       Pagina 2
                     </a>
                   </li>
                   <li>
-                    <a href="#" onClick={() => changeContent('customers')}>
+                    <a
+                      href="#"
+                      onClick={() =>
+                        changeContent(
+                          <CustomersContext>
+                            <Customers />
+                          </CustomersContext>,
+                        )
+                      }
+                    >
                       Clientes
                     </a>
                   </li>
@@ -68,7 +82,7 @@ const Header = () => {
 
             <ul className="nav navbar-nav navbar-right">
               <li>
-                <a href="/representacoes/help/ManualdoUsuárioSCR.html" target="_blank">
+                <a href="#" target="_blank">
                   Ajuda
                 </a>
               </li>
@@ -89,10 +103,10 @@ const Header = () => {
                 <ul className="dropdown-menu">
                   <li className="dropdown-header">Configurações</li>
                   <li>
-                    <a href="/representacoes/configuracao/parametrizacao">Parametrização</a>
+                    <a href="#">Parametrização</a>
                   </li>
                   <li>
-                    <a href="/representacoes/configuracao/dados">Meus Dados</a>
+                    <a href="#">Meus Dados</a>
                   </li>
                   <li role="separator" className="divider"></li>
                   <li>

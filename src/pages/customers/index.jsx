@@ -4,8 +4,16 @@ import FieldsetCard from '../../components/shared/fieldset-card';
 import { CustomersContext } from '../../contexts/customers-context';
 
 function Customers() {
-  const { data, customers, filter, handleChangeFilter, handleDoFilter } =
-    useContext(CustomersContext);
+  const {
+    data,
+    customers,
+    filter,
+    orderBy,
+    handleChangeFilter,
+    handleChangeOrderBy,
+    handleDoFilter,
+    handleAddCustomer,
+  } = useContext(CustomersContext);
   return (
     <>
       <CardTitle title="Gerenciar Clientes" />
@@ -32,6 +40,32 @@ function Customers() {
               onClick={handleDoFilter}
             >
               Filtrar
+            </button>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-sm-10">
+            <label htmlFor="ordem">Ordenar por:</label>
+            <select
+              name="ordem"
+              id="ordem"
+              className="form-control input-sm expanded"
+              value={orderBy}
+              onChange={handleChangeOrderBy}
+            ></select>
+          </div>
+          <div className="col-sm-2">
+            <label htmlFor="novo">&nbsp;</label>
+            <button
+              name="novo"
+              id="novo"
+              className="btn btn-sm btn-success expanded"
+              onClick={() => {
+                alert('1');
+                handleAddCustomer();
+              }}
+            >
+              Adicionar
             </button>
           </div>
         </div>
