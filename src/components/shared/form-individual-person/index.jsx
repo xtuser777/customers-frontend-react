@@ -9,7 +9,7 @@ function FormIndividualPerson({ readonly }) {
   return (
     <FieldsetCard legend="Dados pessoais" obrigatoryFields>
       <div className="row">
-        <div className="col-sm-8">
+        <div className="col-sm-12">
           <label htmlFor="name">
             Nome: <span className="obrigatory-flag">*</span>
           </label>
@@ -24,7 +24,9 @@ function FormIndividualPerson({ readonly }) {
             onChange={handleNameChange}
           />
         </div>
-        <div className="col-sm-2">
+      </div>
+      <div className="row">
+        <div className="col-sm-6">
           <label htmlFor="document">
             CPF: <span className="obrigatory-flag">*</span>
           </label>
@@ -38,7 +40,7 @@ function FormIndividualPerson({ readonly }) {
             onChange={handleDocumentChange}
           />
         </div>
-        <div className="col-sm-2">
+        <div className="col-sm-6">
           <label htmlFor="birth">
             Nascimento: <span className="obrigatory-flag">*</span>
           </label>
@@ -53,6 +55,7 @@ function FormIndividualPerson({ readonly }) {
           />
         </div>
       </div>
+      <div style={{ height: '55px' }}></div>
     </FieldsetCard>
   );
 }

@@ -25,7 +25,7 @@ function FormAddress({ readonly }) {
   return (
     <FieldsetCard legend="Dados de endereço" obrigatoryFields>
       <div className="row">
-        <div className="col-sm-2">
+        <div className="col-sm-3">
           <label htmlFor="code">
             CEP: <span className="obrigatory-flag">*</span>
           </label>
@@ -39,7 +39,7 @@ function FormAddress({ readonly }) {
             onChange={handleCodeChange}
           />
         </div>
-        <div className="col-sm-2">
+        <div className="col-sm-9">
           <label htmlFor="street">
             Rua / Avenida: <span className="obrigatory-flag">*</span>
           </label>
@@ -53,7 +53,9 @@ function FormAddress({ readonly }) {
             onChange={handleStreetChange}
           />
         </div>
-        <div className="col-sm-1">
+      </div>
+      <div className="row">
+        <div className="col-sm-3">
           <label htmlFor="number">
             Número: <span className="obrigatory-flag">*</span>
           </label>
@@ -67,7 +69,7 @@ function FormAddress({ readonly }) {
             onChange={handleNumberChange}
           />
         </div>
-        <div className="col-sm-2">
+        <div className="col-sm-5">
           <label htmlFor="neighborhood">
             Bairro: <span className="obrigatory-flag">*</span>
           </label>
@@ -81,7 +83,7 @@ function FormAddress({ readonly }) {
             onChange={handleNeighborhoodChange}
           />
         </div>
-        <div className="col-sm-2">
+        <div className="col-sm-4">
           <label htmlFor="complement">Complemento:</label>
           <input
             type="text"
@@ -93,7 +95,9 @@ function FormAddress({ readonly }) {
             onChange={handleComplementChange}
           />
         </div>
-        <div className="col-sm-2">
+      </div>
+      <div className="row">
+        <div className="col-sm-9">
           <label htmlFor="city">
             Cidade: <span className="obrigatory-flag">*</span>
           </label>
@@ -107,7 +111,7 @@ function FormAddress({ readonly }) {
             onChange={handleCityChange}
           />
         </div>
-        <div className="col-sm-1">
+        <div className="col-sm-3">
           <label htmlFor="state">
             Estado: <span className="obrigatory-flag">*</span>
           </label>

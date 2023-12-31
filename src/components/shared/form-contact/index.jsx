@@ -9,7 +9,7 @@ function FormContact({ readonly }) {
   return (
     <FieldsetCard legend="Dados de contato" obrigatoryFields>
       <div className="row">
-        <div className="col-sm-4">
+        <div className="col-sm-12">
           <label htmlFor="phone">
             Telefone
             <span className="obrigatory-flag">&nbsp;*</span>:
@@ -28,7 +28,9 @@ function FormContact({ readonly }) {
             />
           </div>
         </div>
-        <div className="col-sm-4">
+      </div>
+      <div className="row">
+        <div className="col-sm-12">
           <label htmlFor="cellphone">
             Celular
             <span className="obrigatory-flag">&nbsp;*</span>:
@@ -47,7 +49,9 @@ function FormContact({ readonly }) {
             />
           </div>
         </div>
-        <div className="col-sm-4">
+      </div>
+      <div className="row">
+        <div className="col-sm-12">
           <label htmlFor="email">
             E-mail
             <span className="obrigatory-flag">&nbsp;*</span>:
